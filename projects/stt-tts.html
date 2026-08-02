@@ -1,227 +1,51 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎙️ STT/TTS Project - Soshida</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0F172A;
-            color: #F8FAFC;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
-        .header {
-            padding: 4rem 2rem 2rem;
-            text-align: center;
-            background: linear-gradient(135deg, #1E293B, #0F172A);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .header h1 { font-size: 3rem; font-weight: 900; margin-bottom: 1rem; }
-        .header h1 .gradient {
-            background: linear-gradient(135deg, #60A5FA, #A78BFA);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .header p { color: #94A3B8; font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
-        .tags { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 1.5rem 0; }
-        .tags span {
-            background: rgba(37,99,235,0.1);
-            color: #60A5FA;
-            padding: 0.3rem 1rem;
-            border-radius: 100px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        .back-link {
-            display: inline-block;
-            margin: 1rem 0;
-            color: #60A5FA;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .back-link:hover { text-decoration: underline; }
-        .section { margin: 2rem 0; }
-        .section h2 { font-size: 1.8rem; margin-bottom: 1rem; color: #F8FAFC; }
-        .section h3 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: #F8FAFC; }
-        .section p, .section li { color: #94A3B8; line-height: 1.8; }
-        .section ul { padding-left: 1.5rem; }
-        .section ul li { margin-bottom: 0.5rem; }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        .feature-card {
-            background: rgba(30,41,59,0.4);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.03);
-            text-align: center;
-        }
-        .feature-card .icon { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; }
-        .feature-card h4 { color: #F8FAFC; }
-        .feature-card p { font-size: 0.9rem; color: #94A3B8; }
-        .code-block {
-            background: #0F172A;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.05);
-            margin: 1rem 0;
-            overflow-x: auto;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            color: #E2E8F0;
-            white-space: pre-wrap;
-        }
-        .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; margin: 2rem 0; }
-        .btn {
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-        .btn-primary { background: linear-gradient(135deg, #2563EB, #7C3AED); color: white; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(37,99,235,0.3); }
-        .btn-secondary { background: rgba(255,255,255,0.05); color: #F8FAFC; border: 1px solid rgba(255,255,255,0.1); }
-        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
-        .status-box {
-            background: rgba(34,197,94,0.1);
-            border: 1px solid rgba(34,197,94,0.2);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            margin: 2rem 0;
-        }
-        .status-box .status { color: #22C55E; font-weight: 600; }
-        .footer {
-            background: #0F172A;
-            border-top: 1px solid rgba(255,255,255,0.02);
-            padding: 2rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-        .footer p { color: #475569; font-size: 0.9rem; }
-        @media (max-width:768px) {
-            .header h1 { font-size: 2rem; }
-            .container { padding: 1rem; }
-            .feature-grid { grid-template-columns: 1fr 1fr; }
-        }
-        @media (max-width:480px) {
-            .feature-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+<html>
+<head><title>🎙️ STT/TTS</title>
+<style>
+body{font-family:sans-serif;background:#0F172A;color:#F8FAFC;padding:2rem;max-width:900px;margin:0 auto}
+h1 .gradient{background:linear-gradient(135deg,#60A5FA,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin:1rem 0}
+.tags span{background:rgba(37,99,235,0.1);color:#60A5FA;padding:0.3rem 1rem;border-radius:100px;font-size:0.8rem}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0}
+.feature-card{background:rgba(30,41,59,0.4);padding:1.5rem;border-radius:12px;text-align:center}
+.feature-card .icon{font-size:2.5rem;display:block}
+.btn{display:inline-block;padding:0.8rem 2rem;border-radius:8px;text-decoration:none;font-weight:600;margin:0.5rem}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#7C3AED);color:white}
+.btn-secondary{background:rgba(255,255,255,0.05);color:#F8FAFC;border:1px solid rgba(255,255,255,0.1)}
+.code-block{background:#0F172A;padding:1.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.05);font-family:monospace;color:#E2E8F0;white-space:pre-wrap;margin:1rem 0}
+.back-link{color:#60A5FA;text-decoration:none}
+.back-link:hover{text-decoration:underline}
+</style>
 </head>
 <body>
-
-    <div class="header">
-        <h1>🎙️ Multilingual <span class="gradient">STT/TTS</span></h1>
-        <p>Speech-to-Text & Text-to-Speech application supporting 25+ languages with interactive web interface.</p>
-        <div class="tags">
-            <span>Python</span><span>Flask</span><span>SpeechRecognition</span>
-            <span>gTTS</span><span>Docker</span><span>CI/CD</span>
-        </div>
-        <a href="../index.html" class="back-link">← Back to Portfolio</a>
-    </div>
-
-    <div class="container">
-
-        <div class="status-box">
-            <div class="status">🟢 Application is Running</div>
-            <p style="margin-top:0.5rem;">🌐 <a href="http://localhost:5000" style="color:#60A5FA;">http://localhost:5000</a></p>
-            <p style="font-size:0.85rem;color:#94A3B8;">Run locally with <code>docker-compose up</code></p>
-        </div>
-
-        <div class="btn-group">
-            <a href="https://github.com/DARSHAN13302/stt-tts-multilingual" class="btn btn-primary">📂 GitHub Repository</a>
-            <a href="http://localhost:5000" class="btn btn-secondary">🎯 Live Demo</a>
-        </div>
-
-        <div class="section">
-            <h2>📋 Overview</h2>
-            <p>A complete Speech-to-Text (STT) and Text-to-Speech (TTS) application with support for <strong>25+ languages</strong> including major Indian languages. Built with Flask, SpeechRecognition, and gTTS, containerized with Docker for easy deployment.</p>
-        </div>
-
-        <div class="section">
-            <h2>✨ Key Features</h2>
-            <div class="feature-grid">
-                <div class="feature-card"><span class="icon">🎤</span><h4>Speech-to-Text</h4><p>Upload audio files (WAV, MP3) for transcription</p></div>
-                <div class="feature-card"><span class="icon">🔊</span><h4>Text-to-Speech</h4><p>Convert text to speech in 25+ languages</p></div>
-                <div class="feature-card"><span class="icon">🌍</span><h4>Multilingual</h4><p>Hindi, Tamil, Telugu, Kannada, and more</p></div>
-                <div class="feature-card"><span class="icon">📥</span><h4>Download MP3</h4><p>Download generated speech as MP3</p></div>
-                <div class="feature-card"><span class="icon">🐳</span><h4>Dockerized</h4><p>Containerized for easy deployment</p></div>
-                <div class="feature-card"><span class="icon">🧪</span><h4>Testing</h4><p>Unit tests with pytest and CI/CD</p></div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>🛠️ Technology Stack</h2>
-            <ul>
-                <li><strong>Backend:</strong> Flask, Python 3.11</li>
-                <li><strong>STT:</strong> SpeechRecognition (Google Speech API)</li>
-                <li><strong>TTS:</strong> gTTS (Google Text-to-Speech)</li>
-                <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
-                <li><strong>Containerization:</strong> Docker, Docker Compose</li>
-                <li><strong>Testing:</strong> Pytest, Pytest-Cov</li>
-                <li><strong>CI/CD:</strong> GitHub Actions</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>🚀 Quick Start</h2>
-            <div class="code-block">
-# Clone the repository
+<a href="../index.html" class="back-link">← Back</a>
+<h1>🎙️ Multilingual <span class="gradient">STT/TTS</span></h1>
+<p>Speech-to-Text & Text-to-Speech with 25+ languages.</p>
+<div class="tags">
+<span>Python</span><span>Flask</span><span>SpeechRecognition</span>
+<span>gTTS</span><span>Docker</span><span>CI/CD</span>
+</div>
+<div style="margin:1.5rem 0">
+<a href="https://github.com/DARSHAN13302/stt-tts-multilingual" class="btn btn-primary">📂 GitHub</a>
+<a href="http://localhost:5000" class="btn btn-secondary">🎯 Live Demo</a>
+</div>
+<div class="feature-grid">
+<div class="feature-card"><span class="icon">🎤</span><h4>Speech-to-Text</h4><p>Upload audio files</p></div>
+<div class="feature-card"><span class="icon">🔊</span><h4>Text-to-Speech</h4><p>25+ languages</p></div>
+<div class="feature-card"><span class="icon">🌍</span><h4>Multilingual</h4><p>Indian + Global</p></div>
+<div class="feature-card"><span class="icon">📥</span><h4>Download MP3</h4><p>Save speech files</p></div>
+</div>
+<h2>🚀 Quick Start</h2>
+<div class="code-block">
 git clone https://github.com/DARSHAN13302/stt-tts-multilingual.git
 cd stt-tts-multilingual
-
-# Run with Docker
 docker-compose up -d
-
-# Open in browser
 open http://localhost:5000
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>📊 API Endpoints</h2>
-            <ul>
-                <li><code>GET /</code> - Web interface</li>
-                <li><code>GET /health</code> - Health check</li>
-                <li><code>POST /stt</code> - Upload audio for transcription</li>
-                <li><code>POST /tts</code> - Generate speech from text</li>
-                <li><code>POST /tts/download</code> - Download speech as MP3</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>🌍 Supported Languages</h2>
-            <p><strong>Indian Languages:</strong> Hindi, Tamil, Telugu, Kannada, Malayalam, Bengali, Marathi, Gujarati, Urdu, Punjabi</p>
-            <p style="margin-top:0.5rem;"><strong>Global Languages:</strong> English, Spanish, French, German, Italian, Portuguese, Russian, Chinese, Japanese, Korean, Arabic, Dutch, Polish, Turkish, Vietnamese, Thai, Indonesian</p>
-        </div>
-
-        <div class="section">
-            <h2>🔗 Links</h2>
-            <ul>
-                <li><a href="https://github.com/DARSHAN13302/stt-tts-multilingual" style="color:#60A5FA;">GitHub Repository</a></li>
-                <li><a href="http://localhost:5000" style="color:#60A5FA;">Live Demo</a></li>
-            </ul>
-        </div>
-
-        <div style="text-align:center;margin:3rem 0;">
-            <a href="../index.html" class="btn btn-secondary">← Back to Portfolio</a>
-        </div>
-
-    </div>
-
-    <footer class="footer">
-        <p>© 2025 Soshida. Built with ❤️ and ☕</p>
-    </footer>
-
+</div>
+<h2>🔗 Links</h2>
+<ul>
+<li><a href="https://github.com/DARSHAN13302/stt-tts-multilingual" style="color:#60A5FA;">GitHub</a></li>
+<li><a href="http://localhost:5000" style="color:#60A5FA;">Live Demo</a></li>
+</ul>
 </body>
 </html>
