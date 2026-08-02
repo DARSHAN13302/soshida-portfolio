@@ -1,0 +1,19 @@
+﻿# Figma files
+*.fig
+*.figma
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Temp files
+*.tmp
+*.log
+*.cache
+node_modules/
